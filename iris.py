@@ -1,7 +1,8 @@
 import pandas as pd
 import streamlit as st
-import sklearn as datasets
+from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
+
 
 st.write('''
 #Prévision des fleurs d'Iris''')
@@ -26,7 +27,7 @@ df=user_input()
 st.subheader('on veut trouver la catégorie de cete fleur')
 st.write(df)
 
-iris=datasets.load_iris()
+iris= load_iris()
 clf=RandomForestClassifier()
 clf.fit(iris.data,iris.target)
 
